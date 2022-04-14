@@ -1,0 +1,26 @@
+.myContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .userAvatar {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    
+    .menuContainer {
+        width: 100%;
+        margin-top: 50px;
+       .menuItem{
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            .arrow {
+                color: #ccc;
+            }
+        }
+    }
+}

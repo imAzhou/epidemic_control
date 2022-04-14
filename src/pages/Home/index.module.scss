@@ -1,0 +1,27 @@
+.homeContainer {
+    padding: 30px;
+    .title {
+        font-size: 36px;
+        font-weight: bold;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 15px;
+    }
+    .btnWrap{
+        display: flex;
+        padding-top: 30px;
+    }
+    .listWrap {
+        margin-top: 100px;
+        
+        .tabWrap {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            .tabItem {
+                font-size: 36px;
+                font-weight: bold;
+                margin-right: 15px;
+            }
+        }
+    }
+}

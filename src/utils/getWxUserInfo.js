@@ -2,7 +2,7 @@
  * @Author: Azhou
  * @Date: 2022-04-14 02:31:38
  * @LastEditors: Azhou
- * @LastEditTime: 2022-04-14 04:10:54
+ * @LastEditTime: 2022-04-14 11:09:18
  */
 import Taro from "@tarojs/taro";
 /**
@@ -10,7 +10,7 @@ import Taro from "@tarojs/taro";
  */
 const getWxUserInfo = async () => {
   return new Promise((resolve) => {
-    Taro.getUserInfo({
+    Taro.getUserProfile({
       lang: "zh_CN",
       desc: "获取你的昵称、头像、地区及性别",
       success: (response) => {
