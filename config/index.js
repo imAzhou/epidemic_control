@@ -2,7 +2,7 @@
  * @Author: Azhou
  * @Date: 2022-04-14 01:06:51
  * @LastEditors: Azhou
- * @LastEditTime: 2022-04-15 20:56:02
+ * @LastEditTime: 2022-04-15 22:11:03
  */
 import path from "path";
 
@@ -17,7 +17,7 @@ const config = {
   },
   sourceRoot: "src",
   outputRoot: "dist",
-  plugins: [],
+  plugins: ["@tarojs/plugin-platform-alipay-dd"],
   defineConstants: {},
   copy: {
     patterns: [],
