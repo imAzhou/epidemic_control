@@ -2,7 +2,7 @@
  * @Author: Azhou
  * @Date: 2022-04-14 01:06:51
  * @LastEditors: Azhou
- * @LastEditTime: 2022-04-14 03:58:41
+ * @LastEditTime: 2022-04-15 20:56:02
  */
 import path from "path";
 
@@ -66,6 +66,7 @@ const config = {
     "@/components": path.resolve(__dirname, "..", "src/components"),
     "@/utils": path.resolve(__dirname, "..", "src/utils"),
     "@/assets": path.resolve(__dirname, "..", "src/assets"),
+    "@/config": path.resolve(__dirname, "..", "src/config"),
   },
 };
 

@@ -2,20 +2,22 @@
  * @Author: Azhou
  * @Date: 2022-04-14 03:19:05
  * @LastEditors: Azhou
- * @LastEditTime: 2022-04-14 12:55:25
+ * @LastEditTime: 2022-04-15 21:03:17
  */
 import { PageContainer, Button, View } from "@tarojs/components";
 import Taro, { useReady } from "@tarojs/taro";
 import { useState } from "react";
-import { getWxUserInfo } from "@/utils";
+import { getWxUserInfo, getWxOpenid } from "@/utils";
 import styles from "./index.module.scss";
 
 const ECPageContainer = ({ children }) => {
   const [showLoginQuery, setShowLoginQuery] = useState(false);
 
   useReady(() => {
-    let openid = Taro.getStorageSync("openid");
-    if (!openid) setShowLoginQuery(true);
+    // 获取用户openid
+    getWxOpenid();
+    let UserInfo = Taro.getStorageSync("UserInfo");
+    if (!UserInfo) setShowLoginQuery(true);
   });
 
   const onClickOverlay = () => {
@@ -26,9 +28,17 @@ const ECPageContainer = ({ children }) => {
     let result = await getWxUserInfo();
     setShowLoginQuery(false);
     if (result) {
-      console.log("用户授权成功");
+      Taro.showToast({
+        title: "授权成功",
+        icon: "success",
+        duration: 2000,
+      });
     } else {
-      console.log("用户授权失败");
+      Taro.showToast({
+        title: "授权失败",
+        icon: "error",
+        duration: 2000,
+      });
     }
   };
 
