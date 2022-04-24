@@ -23,6 +23,20 @@
           "name": "",
           "pathName": "pages/Home/pages/CoidUpload/index",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/Group/CreateGroup/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/Group/JoinGroup/index",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

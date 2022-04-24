@@ -2,7 +2,7 @@
  * @Author: Azhou
  * @Date: 2022-04-14 01:06:51
  * @LastEditors: Azhou
- * @LastEditTime: 2022-04-14 16:44:04
+ * @LastEditTime: 2022-04-23 21:31:05
  */
 // eslint-disable-next-line no-undef
 export default defineAppConfig({
@@ -10,6 +10,8 @@ export default defineAppConfig({
     "pages/Home/index",
     "pages/Home/pages/CoidUpload/index",
     "pages/My/index",
+    "pages/Group/CreateGroup/index",
+    "pages/Group/JoinGroup/index",
   ],
   window: {
     backgroundTextStyle: "light",
@@ -35,5 +37,10 @@ export default defineAppConfig({
         selectedIconPath: "./assets/my_activate.png",
       },
     ],
+  },
+  permission: {
+    "scope.userLocation": {
+      desc: "授权获取您所在位置",
+    },
   },
 });

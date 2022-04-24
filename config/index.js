@@ -2,7 +2,7 @@
  * @Author: Azhou
  * @Date: 2022-04-14 01:06:51
  * @LastEditors: Azhou
- * @LastEditTime: 2022-04-15 22:11:03
+ * @LastEditTime: 2022-04-24 14:57:54
  */
 import path from "path";
 
@@ -18,7 +18,9 @@ const config = {
   sourceRoot: "src",
   outputRoot: "dist",
   plugins: ["@tarojs/plugin-platform-alipay-dd"],
-  defineConstants: {},
+  defineConstants: {
+    LOCATION_APIKEY: JSON.stringify("5NUBZ-4UBE6-I2ASO-MUAAM-YY4J2-BYFF5"),
+  },
   copy: {
     patterns: [],
     options: {},

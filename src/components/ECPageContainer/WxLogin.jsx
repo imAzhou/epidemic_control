@@ -2,7 +2,7 @@
  * @Author: Azhou
  * @Date: 2022-04-17 10:35:48
  * @LastEditors: Azhou
- * @LastEditTime: 2022-04-17 10:35:50
+ * @LastEditTime: 2022-04-23 20:47:02
  */
 import { PageContainer, Button, View } from "@tarojs/components";
 import Taro, { useReady } from "@tarojs/taro";
@@ -13,9 +13,12 @@ import styles from "./index.module.scss";
 const WxLogin = () => {
   const [showLoginQuery, setShowLoginQuery] = useState(false);
 
-  useReady(() => {
+  useReady(async () => {
     // 获取用户openid
-    getWxOpenid();
+    const result = await getWxOpenid();
+    if (!result.error) {
+      Taro.setStorageSync("openid", result.data);
+    }
     let UserInfo = Taro.getStorageSync("UserInfo");
     if (!UserInfo) setShowLoginQuery(true);
   });

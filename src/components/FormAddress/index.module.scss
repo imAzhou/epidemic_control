@@ -12,5 +12,11 @@
         border-radius: 10px;
         padding: 15px;
         width: 65%;
+        height: 40px;
+    }
+    .addressText{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 }
