@@ -2,10 +2,10 @@
  * @Author: Azhou
  * @Date: 2022-04-14 02:31:38
  * @LastEditors: Azhou
- * @LastEditTime: 2022-04-15 21:01:31
+ * @LastEditTime: 2022-04-25 10:24:53
  */
 import Taro from "@tarojs/taro";
-import { BaseWxUrl } from "@/config";
+import { BaseUserUrl } from "@/config";
 
 /**
  * 获取微信用户的openid，不需要用户点击，可静默获取
@@ -16,12 +16,18 @@ export const getWxOpenid = () => {
       success: async (res) => {
         if (res.code) {
           const response = await Taro.request({
-            url: `${BaseWxUrl}/get_openid?code=${res.code}`,
+            url: `${BaseUserUrl}login?code=${res.code}`,
             method: "GET",
           });
+          const cookie = response.header["Set-Cookie"]
+            .split(";")[0]
+            .split("=")[1];
           resolve({
             error: false,
-            data: response.data?.openid,
+            data: {
+              openid: response.data?.openid,
+              cookie,
+            },
           });
         } else {
           console.log("登录失败！" + res.errMsg);
